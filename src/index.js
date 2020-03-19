@@ -44,6 +44,6 @@ const FEATURES = {
       cost: 1400
     },
   ]
-};
+}
 
 ReactDOM.render(<App features={FEATURES}/>, document.getElementById('root'));

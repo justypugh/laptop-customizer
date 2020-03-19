@@ -8,6 +8,8 @@ import './App.css';
 import FeatureList from './FeatureList/FeatureList';
 import Summary from './Summary/Summary';
 
+
+
 // This object will allow us to
 // easily convert numbers into US dollar values
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {

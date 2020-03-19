@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from '../Item/Item';
 import slugify from 'slugify';
 
 class FeatureItem extends Component {
@@ -8,22 +9,15 @@ class FeatureItem extends Component {
                 <legend className="feature__name">
                     <h3>{this.props.feature}</h3>
                 </legend>
-                {this.props.features.map((name) =>
-
-                <div key={slugify(JSON.stringify(name))} className="feature__item">
-                <input
-                    type="radio"
-                    id={slugify(JSON.stringify(name))}
-                    className="feature__option"
+                <Item 
                     name={slugify(this.props.feature)}
-                    checked={name.name === this.props.selected[this.props.feature].name}
-                    onChange={() => this.props.select(this.props.feature, name)}
+                    feature={this.props.feature}
+                    features={this.props.features}
+                    selected={this.props.selected}
+                    select={this.props.select}
+                    currency={this.props.currency}
+                    onChange={() => this.props.select(this.props.feature, window.name)}
                 />
-                <label htmlFor={slugify(JSON.stringify(name))} className="feature__label">
-                    {name.name} ({this.props.currency.format(name.cost)})    
-                </label>    
-                </div>    
-                )}
             </fieldset>
         )
     }
